@@ -46,7 +46,7 @@
 <div class="intro section" id="about">
   <div class="container">
     <div class="units-row units-split wrap">
-      <div class="unit-20 unit-100-sm">
+      <div class="unit-20 unit-100-sm img-container">
         <img src="img/FACE-removebg.png" alt="Avatar" class="responsive-img">
       </div>
       <div class="unit-80 unit-100-sm">
@@ -57,6 +57,7 @@
         I am <b> Post-doc Research Scientist @ <a href="https://ai.meta.com/">Meta AI</a></b> <br>
         kyun0914 (at) gmail.com <br>
         <i>#representation learning #computervision #nlp #multi-modal #genai</i> <br><br>
+
         I am currently at Meta AI. <br>
         I obtained my PhD at Seoul National University, advised by <a href="https://scholar.google.com/citations?user=Ntx5VRIAAAAJ&hl=ko">Prof. Nam Ik
           Cho</a>. <br>
@@ -68,14 +69,23 @@
     </div>
   </div>
 </div>
+
 <style>
   .unit-100-sm {
     width: 100%;
   }
+
+  .img-container {
+    text-align: center; /* Center the image */
+  }
+
   .responsive-img {
     width: 100%;
     height: auto;
+    display: block; /* Remove extra space below the image */
+    margin: 0 auto; /* Center the image horizontally */
   }
+
   @media (max-width: 768px) {
     .units-row {
       flex-direction: column;
