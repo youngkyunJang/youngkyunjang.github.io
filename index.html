@@ -45,44 +45,59 @@
 <!-- Introduction -->
 <div class="intro section" id="about">
   <div class="container">
-    <div class="units-row units-split wrap">
-      <div class="unit-20 unit-100-sm">
+    <div class="intro-row">
+      <div class="intro-avatar">
         <img src="img/FACE-removebg.png" alt="Avatar" class="responsive-img">
       </div>
-      <div class="unit-80 unit-100-sm">
+      <div class="intro-content">
         <h1>Young Kyun Jang<br><span id="typed"></span></h1>
-      </div>
-      <p>
-        안녕하세요! (Hi), <br>
-        I am <b> Post-doc Research Scientist @ <a href="https://ai.meta.com/">Meta AI</a></b> <br>
-        kyun0914 (at) gmail.com <br>
-        <i>#representation learning #computervision #nlp #multi-modal #genai</i> <br><br>
+        <p>
+          안녕하세요! (Hi), <br>
+          I am <b> Post-doc Research Scientist @ <a href="https://ai.meta.com/">Meta AI</a></b> <br>
+          kyun0914 (at) gmail.com <br>
+          <i>#representation learning #computervision #nlp #multi-modal #genai</i> <br><br>
 
-        I am currently at Meta AI. <br>
-        I obtained my PhD at Seoul National University, advised by <a href="https://scholar.google.com/citations?user=Ntx5VRIAAAAJ&hl=ko">Prof. Nam Ik
-          Cho</a>. <br>
-        Here are my <a href="https://github.com/youngkyunJang">Git</a>, <a
-          href="https://www.linkedin.com/in/young-kyun-jang-136b351a7/">Linkedin</a>, <a
-          href="https://scholar.google.com/citations?user=7bujHzUAAAAJ&hl=en">Google Scholar</a>. <br>
-        <b>I am open to new opportunities in the fields of CV, NLP, and generative
-          AI. Feel free to reach out!</b>
+          I am currently at Meta AI. <br>
+          I obtained my PhD at Seoul National University, advised by <a href="https://scholar.google.com/citations?user=Ntx5VRIAAAAJ&hl=ko">Prof. Nam Ik
+            Cho</a>. <br>
+          Here are my <a href="https://github.com/youngkyunJang">Git</a>, <a
+            href="https://www.linkedin.com/in/young-kyun-jang-136b351a7/">Linkedin</a>, <a
+            href="https://scholar.google.com/citations?user=7bujHzUAAAAJ&hl=en">Google Scholar</a>. <br>
+          <b>I am open to new opportunities in the fields of CV, NLP, and generative
+            AI. Feel free to reach out!</b>
+        </p>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
-  .unit-100-sm {
-    width: 100%;
+  .intro-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro-avatar, .intro-content {
+    flex: 1 1 100%; /* Full width on small screens */
+    text-align: center; /* Centering text for smaller screens */
   }
 
   .responsive-img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
   }
 
-  @media (max-width: 768px) {
-    .units-row {
-      flex-direction: column;
+  @media (min-width: 768px) {
+    .intro-avatar, .intro-content {
+      flex: 1; /* Taking up equal space on larger screens */
+    }
+    .intro-avatar {
+      text-align: left; /* Aligning image to the left on larger screens */
+    }
+    .intro-content {
+      text-align: left; /* Aligning text to the left on larger screens */
     }
   }
 </style>
