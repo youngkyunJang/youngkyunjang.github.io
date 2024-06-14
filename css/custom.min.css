@@ -49,7 +49,7 @@ a:hover {
   .intro img {
     width: 130px;
     height: 130px;
-    border-radius: 120px;
+    border-radius: 0; /* Make the image square */
     position: relative; /* Remove absolute positioning */
     margin: auto; /* Center the image within the container */
     display: block; /* Ensures the image is a block element */
