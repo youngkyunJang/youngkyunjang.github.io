@@ -39,23 +39,26 @@ a:hover {
 }
 
 @media only screen and (max-width: 767px) {
+  .intro .img-container {
+    position: relative; /* Change to relative positioning */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    padding-top: 20px; /* Add some space at the top */
+  }
+
   .intro img {
     width: 130px;
     height: 130px;
     border-radius: 120px;
-    position: absolute;
-    /* This takes the img out of the normal document flow */
-    top: 0;
-    /* Positions the img at the top of the .container */
-    right: 0;
-    /* Positions the img at the right of the .container */
+    position: relative; /* Remove absolute positioning */
+    margin: auto; /* Center the image within the container */
+    display: block; /* Ensures the image is a block element */
   }
 
   footer {
-    text-align: center
+    text-align: center;
   }
 }
-
 .typed-cursor {
   opacity: 1;
   font-weight: 100;
