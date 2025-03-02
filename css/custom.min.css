@@ -43,7 +43,7 @@ a:hover {
     position: relative; /* Change to relative positioning */
     display: flex;
     justify-content: center; /* Center the image horizontally */
-    padding-top: 20px; /* Add some space at the top */
+    padding-top: 40px; /* Add some space at the top */
   }
 
   .intro img {
