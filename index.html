@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Young Kyun Jang — Research Scientist @ Google DeepMind</title>
+  <meta name="description" content="Young Kyun Jang is a Research Scientist at Google DeepMind working on multi-modal AI, computer vision, NLP, and speech." />
+  <meta name="author" content="Young Kyun Jang" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-bg: #fafaf9;
+      --color-surface: #ffffff;
+      --color-text: #1a1a1a;
+      --color-text-secondary: #555555;
+      --color-text-muted: #888888;
+      --color-accent: #2563eb;
+      --color-accent-light: #dbeafe;
+      --color-border: #e5e5e5;
+      --color-tag-bg: #f0f4ff;
+      --color-tag-text: #3b5fe0;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-serif: 'Source Serif 4', Georgia, serif;
+      --max-width: 780px;
+      --nav-height: 60px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover { color: #1d4ed8; }
+
+    ::selection {
+      background: var(--color-accent-light);
+      color: var(--color-accent);
+    }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 249, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      height: var(--nav-height);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--color-text);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--color-text);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-accent);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--color-text);
+    }
+
+    @media (max-width: 640px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        background: var(--color-surface);
+        border-bottom: 1px solid var(--color-border);
+        flex-direction: column;
+        padding: 16px 24px;
+        gap: 16px;
+      }
+      .nav-links.open { display: flex; }
+    }
+
+    /* ===== Sections ===== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    section + section {
+      border-top: 1px solid var(--color-border);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 36px;
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title .icon {
+      font-size: 1.1rem;
+      color: var(--color-accent);
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      padding: 100px 0 72px;
+      border-bottom: none;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .hero-photo {
+      flex-shrink: 0;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--color-surface);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .hero-text .subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .hero-text .subtitle a {
+      font-weight: 600;
+    }
+
+    .hero-bio {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--color-tag-bg);
+      color: var(--color-tag-text);
+      padding: 4px 14px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      padding: 6px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    .hero-links a:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: var(--color-tag-bg);
+    }
+
+    @media (max-width: 640px) {
+      .hero-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .hero-photo { width: 120px; height: 120px; }
+      .hero-tags { justify-content: center; }
+      .hero-links { justify-content: center; }
+    }
+
+    /* ===== Publications ===== */
+    .pub-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .pub-group-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .pub-group-note {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+    }
+
+    .pub-item {
+      padding: 20px 24px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .pub-item:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      border-color: #d0d0d0;
+    }
+
+    .pub-venue {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-accent);
+      background: var(--color-accent-light);
+      padding: 2px 10px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .pub-title {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--color-text);
+      margin-bottom: 6px;
+    }
+
+    .pub-authors {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    .pub-authors .me {
+      color: var(--color-text);
+      font-weight: 600;
+    }
+
+    .pub-links {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .pub-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--color-accent);
+      border: 1px solid var(--color-accent-light);
+      padding: 3px 12px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .pub-links a:hover {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
+    }
+
+    /* ===== Timeline (Experience & Education) ===== */
+    .timeline {
+      list-style: none;
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--color-border);
+    }
+
+    .timeline li {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .timeline li:last-child { margin-bottom: 0; }
+
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      border: 2px solid var(--color-bg);
+      box-shadow: 0 0 0 2px var(--color-accent-light);
+    }
+
+    .timeline .role {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-text);
+    }
+
+    .timeline .org {
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+
+    .timeline .period {
+      font-size: 0.825rem;
+      color: var(--color-text-muted);
+      margin-top: 2px;
+    }
+
+    /* ===== Skills & Services ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 640px) {
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+
+    .skill-card {
+      padding: 20px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+    }
+
+    .skill-card h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-text-muted);
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      font-size: 0.925rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    .services-text {
+      font-size: 0.925rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      border-top: 1px solid var(--color-border);
+      padding: 32px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.825rem;
+      color: var(--color-text-muted);
+    }
+
+    footer .social {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      list-style: none;
+      margin-bottom: 12px;
+    }
+
+    footer .social a {
+      color: var(--color-text-muted);
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+
+    footer .social a:hover {
+      color: var(--color-accent);
+    }
+
+    /* ===== Animations ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Print ===== */
+    @media print {
+      .nav, footer { display: none; }
+      section { padding: 24px 0; }
+      .pub-item { break-inside: avoid; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Young Kyun Jang</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about" class="active">About</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="CV.pdf" target="_blank">CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero / About -->
+  <section class="hero" id="about">
+    <div class="container">
+      <div class="hero-grid fade-in">
+        <img src="img/FACE-removebg.png" alt="Young Kyun Jang" class="hero-photo" />
+        <div class="hero-text">
+          <h1>Young Kyun Jang</h1>
+          <p class="subtitle">Research Scientist at <a href="https://deepmind.google/">Google DeepMind</a></p>
+
+          <div class="hero-tags">
+            <span class="tag">#MultiModalRepresentationLearning</span>
+            <span class="tag">#Personalization</span>
+            <span class="tag">#Memory</span>
+            <span class="tag">#LLMAgent</span>
+          </div>
+
+          <p class="hero-bio">
+            Hi! (안녕하세요) My passion lies in building AI that truly understands and remembers you — through multi-modal representation learning, personalization with personal context and memory, and agentic AI.
+            I help make <a href="https://gemini.google.com/app">Gemini</a> — an AI agent 🤖 — more personal for you.
+            I earned my PhD from Seoul National University under the guidance of <a href="https://scholar.google.com/citations?user=Ntx5VRIAAAAJ&hl=ko">Prof. Nam Ik Cho</a>,
+            and worked as a Postdoctoral Researcher at Meta AI with <a href="https://sites.google.com/site/sernam">Prof. Ser-nam Lim</a>.
+          </p>
+
+          <div class="hero-links">
+            <a href="mailto:kyun0914@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://www.linkedin.com/in/young-kyun-jang-136b351a7/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=7bujHzUAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <a href="https://github.com/youngkyunJang" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications">
+    <div class="container">
+      <h2 class="section-title fade-in"><span class="icon"><i class="fas fa-book-open"></i></span> Publications</h2>
+
+      <h3 class="pub-group-title fade-in">First-Author Papers</h3>
+      <p class="pub-group-note fade-in">* denotes equal contribution</p>
+
+      <ul class="pub-list">
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">ICCV 2025</span>
+          <div class="pub-title">Towards Cross-modal Backward-compatible Representation Learning for Vision-Language Models</div>
+          <div class="pub-authors"><span class="me">Young Kyun Jang</span>, Ser-Nam Lim</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2405.14715" target="_blank"><i class="fas fa-file-alt"></i> arXiv</a>
+          </div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">Scientific Reports</span>
+          <div class="pub-title">Visual Delta Generator with Large Multi-modal Generative Models for Composed Image Retrieval by Harnessing Unlabeled Data</div>
+          <div class="pub-authors"><span class="me">Young Kyun Jang</span>, Donghyun Kim</div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">EMNLP 2024 Findings</span>
+          <div class="pub-title">MATE: Meet At The Embedding — Connecting Images with Long Texts</div>
+          <div class="pub-authors"><span class="me">Young Kyun Jang</span>, Junmo Kang, Yong Jae Lee, Donghyun Kim</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/pdf/2407.09541" target="_blank"><i class="fas fa-file-alt"></i> arXiv</a>
+          </div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">ECCV 2024</span>
+          <div class="pub-title">Spherical Linear Interpolation and Text-Anchoring for Zero-shot Composed Image Retrieval</div>
+          <div class="pub-authors"><span class="me">Young Kyun Jang</span>, Dat Huynh, Ashish Shah, Wen-Kai Chen, Ser-Nam Lim</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2405.00571" target="_blank"><i class="fas fa-file-alt"></i> arXiv</a>
+          </div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">CVPR 2024</span>
+          <div class="pub-title">Visual Delta Generator with Large Multi-modal Model for Semi-supervised Composed Image Retrieval</div>
+          <div class="pub-authors"><span class="me">Young Kyun Jang*</span>, Donghyun Kim*, Zihang Meng, Dat Huynh, Ser-Nam Lim</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2404.15516" target="_blank"><i class="fas fa-file-alt"></i> arXiv</a>
+            <a href="https://github.com/youngkyunJang/VDG" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">CVPR 2025</span>
+          <div class="pub-title">GOAL: Global-local Object Alignment Learning</div>
+          <div class="pub-authors">Hyungyu Choi*, <span class="me">Young Kyun Jang*</span>, Chanho Eom</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2503.17782" target="_blank"><i class="fas fa-file-alt"></i> arXiv</a>
+          </div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">TIP</span>
+          <div class="pub-title">FAST-GOAL: Fast and Efficient Global-local Object Alignment Learning</div>
+          <div class="pub-authors">Hyungyu Choi*, <span class="me">Young Kyun Jang*</span>, Chanho Eom</div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">ICASSP 2026</span>
+          <div class="pub-title">COVA: Text-guided Composed Retrieval for Audio-Visual Content</div>
+          <div class="pub-authors">Gyuwon Han*, <span class="me">Young Kyun Jang*</span>, Chanho Eom</div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">ICCV 2023 Workshop</span>
+          <div class="pub-title">VICT: Visual In-Context Tuning</div>
+          <div class="pub-authors"><span class="me">Young Kyun Jang</span>, Dat Huynh, Zihang Meng, Ser-Nam Lim</div>
+          <div class="pub-links">
+            <a href="https://github.com/EliSchwartz/MMFM23/blob/main/37.pdf" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
+          </div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">ECCV 2022</span>
+          <div class="pub-title">Deep Hash Distillation for Image Retrieval</div>
+          <div class="pub-authors"><span class="me">Young Kyun Jang</span>, Geonmo Gu, Byungsoo Ko, Isaac Kang, Nam Ik Cho</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2112.08816" target="_blank"><i class="fas fa-file-alt"></i> arXiv</a>
+            <a href="https://github.com/youngkyunJang/Deep-Hash-Distillation" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">ICCV 2021</span>
+          <div class="pub-title">Self-supervised Product Quantization for Deep Unsupervised Image Retrieval</div>
+          <div class="pub-authors"><span class="me">Young Kyun Jang</span>, Nam Ik Cho</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2109.02244" target="_blank"><i class="fas fa-file-alt"></i> arXiv</a>
+            <a href="https://github.com/youngkyunJang/SPQ" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">CVPR 2020</span>
+          <div class="pub-title">Generalized Product Quantization Network for Semi-Supervised Image Retrieval</div>
+          <div class="pub-authors"><span class="me">Young Kyun Jang</span>, Nam Ik Cho</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2002.11281" target="_blank"><i class="fas fa-file-alt"></i> arXiv</a>
+            <a href="https://github.com/youngkyunJang/GPQ" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">AVSS 2019 · Oral</span>
+          <div class="pub-title">Deep Face Image Retrieval for Cancelable Biometric Authentication</div>
+          <div class="pub-authors"><span class="me">Young Kyun Jang</span>, Nam Ik Cho</div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">ACCV 2018</span>
+          <div class="pub-title">Deep Clustering and Block Hashing Network for Face Image Retrieval</div>
+          <div class="pub-authors"><span class="me">Young Kyun Jang</span>, Dong-ju Jeong, Seok Hee Lee, Nam Ik Cho</div>
+        </li>
+
+      </ul>
+
+      <h3 class="pub-group-title fade-in" style="margin-top: 48px;">Co-authored Papers</h3>
+
+      <ul class="pub-list">
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">ICML 2026</span>
+          <div class="pub-title">EMBGUARD: Constructing Hazard-Aware Guardrails for Safe Planning in Embodied Agents</div>
+          <div class="pub-authors">Dongwook Choi, Taeyoon Kwon, Bogyung Jeong, Minju Kim, Yeonjun Hwang, Hyojun Kim, Byungchul Kim, <span class="me">Young Kyun Jang</span>, Jinyoung Yeo</div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">IJCV</span>
+          <div class="pub-title">Delving into Pre-training for Domain Transfer: A Broad Study of Pre-training for Domain Generalization and Domain Adaptation</div>
+          <div class="pub-authors">Jungmyung Wi, <span class="me">Young Kyun Jang</span>, Dujin Lee, Myeongseok Nam, Donghyun Kim</div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">CVPR 2024</span>
+          <div class="pub-title">MA-LMM: Memory-Augmented Large Multimodal Model for Long-Term Video Understanding</div>
+          <div class="pub-authors">Bo He, Hengduo Li, <span class="me">Young Kyun Jang</span>, Menglin Jia, Xuefei Cao, Ashish Shah, Abhinav Shrivastava, Ser-Nam Lim</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2404.05726" target="_blank"><i class="fas fa-file-alt"></i> arXiv</a>
+            <a href="https://github.com/boheumd/MA-LMM" target="_blank"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">CVPR 2024</span>
+          <div class="pub-title">On the Robustness of Large Multimodal Models Against Image Adversarial Attacks</div>
+          <div class="pub-authors">Xuanming Cui, Alejandro Aparcedo, <span class="me">Young Kyun Jang</span>, Ser-Nam Lim</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2312.03777" target="_blank"><i class="fas fa-file-alt"></i> arXiv</a>
+          </div>
+        </li>
+
+        <li class="pub-item fade-in">
+          <span class="pub-venue">ICIP 2022</span>
+          <div class="pub-title">Self-Supervised Pretraining for Deep Hash-Based Image Retrieval</div>
+          <div class="pub-authors">Haeyoon Yang, <span class="me">Young Kyun Jang</span>, Isaac Kang, Nam Ik Cho</div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experience & Education -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title fade-in"><span class="icon"><i class="fas fa-briefcase"></i></span> Experience</h2>
+
+      <ul class="timeline fade-in">
+        <li>
+          <div class="role">Research Scientist</div>
+          <div class="org">Google DeepMind</div>
+          <div class="period">Jan 2025 — Present</div>
+        </li>
+        <li>
+          <div class="role">Post-doc Research Scientist</div>
+          <div class="org">Meta AI</div>
+          <div class="period">Oct 2022 — Oct 2024</div>
+        </li>
+        <li>
+          <div class="role">Staff Engineer</div>
+          <div class="org">Samsung Research</div>
+          <div class="period">Mar 2022 — Sep 2022</div>
+        </li>
+        <li>
+          <div class="role">Research Intern</div>
+          <div class="org">Naver Search</div>
+          <div class="period">Jun 2021 — Feb 2022</div>
+        </li>
+      </ul>
+
+      <h2 class="section-title fade-in" style="margin-top: 56px;"><span class="icon"><i class="fas fa-graduation-cap"></i></span> Education</h2>
+
+      <ul class="timeline fade-in">
+        <li>
+          <div class="role">Ph.D. in Electrical and Computer Engineering</div>
+          <div class="org">Seoul National University</div>
+          <div class="period">Mar 2016 — Feb 2022</div>
+        </li>
+        <li>
+          <div class="role">B.S. in Electrical and Computer Engineering</div>
+          <div class="org">Seoul National University</div>
+          <div class="period">Mar 2012 — Sep 2016</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <ul class="social">
+        <li><a href="mailto:kyun0914@gmail.com" title="Email"><i class="fas fa-envelope"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/young-kyun-jang-136b351a7/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="https://scholar.google.com/citations?user=7bujHzUAAAAJ&hl=en" target="_blank" title="Scholar"><i class="fas fa-graduation-cap"></i></a></li>
+        <li><a href="https://github.com/youngkyunJang" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
+      </ul>
+      <p>&copy; 2025 Young Kyun Jang. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll animations & active nav -->
+  <script>
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 100;
+        if (scrollY >= top) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+      });
+    });
+
+    // Close mobile nav on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
